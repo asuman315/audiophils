@@ -1,7 +1,11 @@
 import { Link, Image, gql, useShopQuery, CacheLong } from '@shopify/hydrogen';
-export default function FeaturedCollections() { 
- 
- const {data: { collections },} = useShopQuery({ query: QUERY, cache: CacheLong(), });
+export default function FeaturedCollections() {
+  const {
+    data: { collections },
+  } = useShopQuery({
+    query: QUERY,
+    cache: CacheLong(),
+  });
 
   return (
     <section className='w-full gap-4 md:gap-8 grid p-6 md:p-8 lg:p-12'>
@@ -33,8 +37,6 @@ export default function FeaturedCollections() {
     </section>
   );
 }
-
-
 const QUERY = gql`
   query FeaturedCollections {
     collections(first: 3, query: "collection_type:smart", sortKey: UPDATED_AT) {

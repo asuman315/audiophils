@@ -14,7 +14,12 @@ export function Layout({ children }) {
   const { pathname } = useUrl();
   const isHome = pathname === '/';
 
-  const {data: { shop },} = useShopQuery({query: SHOP_QUERY, cache: CacheLong(), });
+  const {
+    data: { shop },
+  } = useShopQuery({
+    query: SHOP_QUERY,
+    cache: CacheLong(),
+  });
 
   return (
     <>
@@ -52,8 +57,6 @@ export function Layout({ children }) {
     </>
   );
 }
-
-
 const SHOP_QUERY = gql`
   query ShopInfo {
     shop {
