@@ -1,4 +1,6 @@
 import Collections from '../../../components/Collections.server';
+import { Layout } from '../../../components/Layout.server';
+
 import {
   gql,
   useShopQuery,
@@ -27,17 +29,18 @@ export default function Collection() {
   });
 
   return (
-    <main>
-      <Suspense>
-        <Seo type='collection' data={collection} />
-      </Suspense>
-      <header>
-        <Collections collection={collection} />
-      </header>
+    <main className=''>
+      <Layout>
+        <Suspense>
+          <Seo type='collection' data={collection} />
+        </Suspense>
+        <header className='grid'>
+          <Collections collection={collection} />
+        </header>
+      </Layout>
     </main>
   );
 }
-
 
 const QUERY = gql`
   query CollectionDetails($handle: String!) {

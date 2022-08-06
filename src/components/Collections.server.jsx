@@ -6,7 +6,6 @@ const Collections = ({ collection }) => {
   const { title, description, products } = collection;
 
   return (
-    <Layout>
       <section className='grid w-full gap-8 p-4 py-8 md:p-8 lg:p-12 justify-items-start max-w-6xl mx-auto'>
         <h1 className='text-4xl md:text-6xl whitespace-pre-wrap font-bold inline-block'>
           {title}
@@ -30,7 +29,6 @@ const Collections = ({ collection }) => {
           </div>
         </section>
       </section>
-    </Layout>
   );
 };
 
