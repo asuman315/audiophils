@@ -30,7 +30,7 @@ h1 {
   @apply text-5xl font-['Old_Standard_TT'] font-bold md:text-7xl leading-[3rem] tracking-wide
 }
   h2 {
-    @apply text-2xl font-[Poppins] font-extrabold md:text-3xl tracking-widest
+    @apply text-3xl font-[Poppins] font-extrabold md:text-5xl tracking-widest
   }
 h3 {
     @apply text-lg font-bold md:text-[1.9rem] tracking-wide
