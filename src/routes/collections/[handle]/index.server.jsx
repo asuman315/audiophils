@@ -38,6 +38,7 @@ export default function Collection() {
   );
 }
 
+
 const QUERY = gql`
   query CollectionDetails($handle: String!) {
     collection(handle: $handle) {
@@ -45,8 +46,42 @@ const QUERY = gql`
       title
       description
       seo {
-       description
-       title
+        description
+        title
+      }
+      image {
+        id
+        url
+        width
+        height
+        altText
+      }
+      products(first: 8) {
+        nodes {
+          id
+          title
+          publishedAt
+          handle
+          variants(first: 1) {
+            nodes {
+              id
+              image {
+                url
+                altText
+                width
+                height
+              }
+              priceV2 {
+                amount
+                currencyCode
+              }
+              compareAtPriceV2 {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
       }
     }
   }
