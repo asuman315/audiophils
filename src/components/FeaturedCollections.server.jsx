@@ -1,4 +1,5 @@
 import { Link, Image, gql, useShopQuery, CacheLong } from '@shopify/hydrogen';
+
 export default function FeaturedCollections() {
   const {
     data: { collections },

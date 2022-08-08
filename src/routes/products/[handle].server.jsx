@@ -1,34 +1,33 @@
-import ProductDetails from '../../../components/ProductDetails.server';
-import { Layout } from '../../../components/Layout.server';
-
 import {
   gql,
   useShopQuery,
-  useRouteParams,
-  Seo,
   useServerAnalytics,
+  useRouteParams,
   ShopifyAnalyticsConstants,
+  Seo,
 } from '@shopify/hydrogen';
 import { Suspense } from 'react';
+import { Layout } from '../../components/Layout.server';
+import ProductDetails from '../../components/ProductDetails.client';
 
-export default function Product() {
+export default function Product({ params }) {
   const { handle } = useRouteParams();
 
-   const {
-     data: { product },
-   } = useShopQuery({
-     query: PRODUCT_QUERY,
-     variables: {
-       handle,
-     },
-   });
+  const {
+    data: { product },
+  } = useShopQuery({
+    query: PRODUCT_QUERY,
+    variables: {
+      handle,
+    },
+  });
 
-   useServerAnalytics({
-     shopify: {
-       pageType: ShopifyAnalyticsConstants.pageType.product,
-       resourceId: product.id,
-     },
-   });
+  useServerAnalytics({
+    shopify: {
+      pageType: ShopifyAnalyticsConstants.pageType.product,
+      resourceId: product.id,
+    },
+  });
 
   return (
     <Layout>
@@ -36,11 +35,9 @@ export default function Product() {
         <Seo type='product' data={product} />
       </Suspense>
       <ProductDetails product={product} />
-    </Layout> 
+    </Layout>
   );
 }
-
-
 const PRODUCT_QUERY = gql`
   fragment MediaFields on Media {
     mediaContentType

@@ -1,4 +1,4 @@
-import { Layout } from './Layout.server';
+
 import ProductCard from './ProductCard.server';
 
 const Collections = ({ collection }) => {

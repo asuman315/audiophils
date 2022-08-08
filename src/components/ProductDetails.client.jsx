@@ -5,7 +5,6 @@ import {
   ProductPrice,
   BuyNowButton,
 } from '@shopify/hydrogen';
-
 export default function ProductDetails({ product }) {
   return (
     <ProductOptionsProvider data={product}>
@@ -95,7 +94,6 @@ function ProductForm({ product }) {
     </form>
   );
 }
-
 function OptionRadio({ values, name }) {
   const { selectedOptions, setSelectedOption } = useProductOptions();
 
@@ -128,7 +126,6 @@ function OptionRadio({ values, name }) {
     </>
   );
 }
-
 function ProductGallery({ media }) {
   if (!media.length) {
     return null;

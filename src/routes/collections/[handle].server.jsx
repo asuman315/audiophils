@@ -1,5 +1,5 @@
-import Collections from '../../../components/Collections.server';
-import { Layout } from '../../../components/Layout.server';
+import Collections from '../../components/Collections.server';
+import { Layout } from '../../components/Layout.server';
 
 import {
   gql,
