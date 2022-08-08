@@ -29,7 +29,7 @@ export default function Collection() {
   });
 
   return (
-    <main className=''>
+    <main className='grid'>
       <Layout>
         <Suspense>
           <Seo type='collection' data={collection} />
