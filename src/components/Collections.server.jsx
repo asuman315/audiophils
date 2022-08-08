@@ -12,7 +12,7 @@ const Collections = ({ collection }) => {
         </h1>
 
         {description && (
-          <div className='flex justify-between w-full border'>
+          <div className='flex justify-between w-full'>
             <div>
               <p className='max-w-md text-xl whitespace-pre-wrap inherit text-copy inline-block'>
                 {description}
